@@ -11,6 +11,10 @@ opt.expandtab = true
 opt.autoindent = true
 opt.breakindent = true
 
+-- folding
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- line wrapping
 opt.wrap = false
 
