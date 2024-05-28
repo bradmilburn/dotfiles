@@ -7,6 +7,9 @@ return {
   -- Detect tabstop and shiftwidth automatically
   "tpope/vim-sleuth",
 
+  -- Prettier
+  "prettier/vim-prettier",
+
   -- tmux & split window navigation
   -- "christoomey/vim-tmux-navigator",
 
