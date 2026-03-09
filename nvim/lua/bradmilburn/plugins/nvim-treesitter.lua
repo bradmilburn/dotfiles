@@ -6,7 +6,7 @@ return {
     "windwp/nvim-ts-autotag",
   },
   config = function()
-    local treesitter = require("nvim-treesitter.configs")
+    local treesitter = require("nvim-treesitter.config")
 
     treesitter.setup({
       highlight = {
@@ -27,7 +27,6 @@ return {
         "yaml",
         "html",
         "css",
-        "prisma",
         "markdown",
         "markdown_inline",
         "bash",
@@ -36,7 +35,6 @@ return {
         "dockerfile",
         "gitignore",
         "query",
-        "templ",
       },
       -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
       auto_install = false,

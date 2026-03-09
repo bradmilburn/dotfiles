@@ -68,79 +68,41 @@ return {
     local util = require "lspconfig/util"
 
     -- configure html server
-    lspconfig["html"].setup({
+    vim.lsp.config("html", {
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "html", "templ" },
-    })
-
-    -- configure htmx server
-    lspconfig["htmx"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "html", "templ" },
-    })
-
-    lspconfig["templ"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "templ" },
     })
 
     -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
+    vim.lsp.config("ts_ls", {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure css server
-    lspconfig["cssls"].setup({
+    vim.lsp.config("cssls", {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure tailwindcss server
-    lspconfig["tailwindcss"].setup({
+    vim.lsp.config("tailwindcss", {
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "templ", "javascript", "typescript", "react" },
       init_options = { userLanguages = { templ = "html" } },
     })
 
-    -- configure prisma orm server
-    lspconfig["prismals"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
     -- configure emmet language server
-    lspconfig["emmet_ls"].setup({
+    vim.lsp.config("emmet_ls", {
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
     })
 
-    -- configure gopls server
-    lspconfig["gopls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      cmd = { "gopls" },
-      filetypes = { "go", "gomod", "gowork", "gotmpl" },
-      root_dir = util.root_pattern("go.mod", "go.work", ".git"),
-      settings = {
-        gopls = {
-          completeUnimported = true,
-          analyses = {
-            unusedparams = true,
-          },
-          staticcheck = true,
-          gofumpt = true,
-        },
-      },
-    })
-
     -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
+    vim.lsp.config("lua_ls", {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = { -- custom settings for lua
@@ -157,16 +119,6 @@ return {
             },
           },
         },
-      },
-    })
-
-    -- configure phpactor server
-    lspconfig["phpactor"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      init_options = {
-        ["language_server_phpstan.enabled"] = false,
-        ["language_server_psalm.enabled"] = false,
       },
     })
   end,
