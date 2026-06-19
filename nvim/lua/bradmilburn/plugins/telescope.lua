@@ -4,10 +4,9 @@ return {
     "nvim-lua/plenary.nvim",
     {
       "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      cond = function()
-        return vim.fn.executable "make" == 1
-      end,
+      build = vim.uv.os_uname().sysname:find("Windows") and
+        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config Release' or
+        'make'
     },
   },
   config = function()
