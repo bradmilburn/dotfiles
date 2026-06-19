@@ -21,7 +21,7 @@ keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnosti
 keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode with jj" })
 
 -- paste without overwrite
-kepmap.set("v", "p", "P")
+keymap.set("v", "p", "P", { desc = "Keep copied value in clipboard" })
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
