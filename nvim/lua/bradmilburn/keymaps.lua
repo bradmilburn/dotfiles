@@ -23,6 +23,9 @@ keymap.set("i", "jj", "<Esc>", { desc = "Exit insert mode with jj" })
 -- paste without overwrite
 keymap.set("v", "p", "P", { desc = "Keep copied value in clipboard" })
 
+-- remap redo
+keymap.set("n", "U", "<C-r>")
+
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
